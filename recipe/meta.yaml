@@ -22,7 +22,6 @@ requirements:
   run:
     - python >=3.9
     - jax >=0.4.6
-    - jaxtyping
 
 test:
   imports:
