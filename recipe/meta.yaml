@@ -1,13 +1,13 @@
 {% set name = "pyqg-jax" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyqg-jax-{{ version }}.tar.gz
-  sha256: a1b83dc2b25686a44e8b8ca82b4e58808c93dc01312b58e661bbf91d26a9b95e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b6ea17614f3b47d60b3b29c95860ca8206cca7083be653bdc42ba16ebc56f850
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - jax >=0.3.21
+    - jax >=0.4.6
     - jaxtyping
 
 test:
