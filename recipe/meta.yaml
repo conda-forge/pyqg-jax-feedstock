@@ -28,7 +28,7 @@ test:
     - pyqg_jax
   commands:
     - pip check
-    - JAX_ENABLE_X64=True JAX_DEFAULT_DTYPE_BITS=32 pytest tests  # [unix]
+    - JAX_ENABLE_X64=True pytest tests  # [unix]
   source_files:
     - tests
   requires:
