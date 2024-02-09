@@ -1,5 +1,5 @@
 {% set name = "pyqg-jax" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: b6ea17614f3b47d60b3b29c95860ca8206cca7083be653bdc42ba16ebc56f850
+  sha256: 1d70f59f9139cb9662be3ae56b345a521fa34d733a5b716d04aef545a7cad37f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python >=3.9
-    - flit-core >=3.2,<4
+    - flit-core >=3.9,<4
     - pip
   run:
     - python >=3.9
