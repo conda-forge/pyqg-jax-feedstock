@@ -33,8 +33,9 @@ test:
     - tests
   requires:
     - pip
-    - pyqg
     - pytest
+    - numpy
+    - pyqg
     # Spurious dependency from PyQG (affects pip check)
     - cython
     # See issue conda-forge/pyfftw-feedstock#51
