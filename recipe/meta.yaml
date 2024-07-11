@@ -38,8 +38,6 @@ test:
     - pyqg
     # Spurious dependency from PyQG (affects pip check)
     - cython
-    # See issue conda-forge/pyfftw-feedstock#51
-    - pyfftw <0.13
 
 about:
   home: https://github.com/karlotness/pyqg-jax
