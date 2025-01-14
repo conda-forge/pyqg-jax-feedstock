@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: cca2ff57429fbcdc259fde400d159c3f64a53569cd27d566f066bb42d1012839
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - flit-core >=3.9,<4
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - jax >=0.4.6
 
 test:
@@ -38,6 +38,7 @@ test:
     - pyqg
     # Spurious dependency from PyQG (affects pip check)
     - cython
+    - python {{ python_min }}
 
 about:
   home: https://github.com/karlotness/pyqg-jax
